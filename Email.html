@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h2><span style="color: #ff0000;">Biola Music Conservatory Chapel Report</span></h2>
+    <p>Dear <?= studentName?>,</p>
+    <p>You can find your concert progress below:</p>
+    <table style="border-collapse: collapse; width: 54.6781%; height: 144px;" border="1">
+      <tbody>
+        <tr style="height: 18px;">
+          <td style="width: 39.5833%; height: 18px;"><span style="color: #ff0000;"><strong>Concert Category</strong></span></td>
+          <td style="width: 6.51042%; height: 18px;"><span style="color: #ff0000;"><strong>Attended</strong></span></td>
+          <td style="width: 6.03171%; height: 18px;"><span style="color: #ff0000;"><strong>Required</strong></span></td>
+        </tr>
+        <? categories.forEach(category => { ?>
+          <tr style="height: 18px;">
+          <td style="width: 39.5833%; height: 18px;"><?= category.name?></td>
+          <td style="width: 6.51042%; height: 18px;"><?= category.num?></td>
+          <td style="width: 6.03171%; height: 18px;"><span style="color: #ff0000;"><?= category.req?></td>
+        </tr>
+        <? }) ?>
+        <tr style="height: 18px;">
+          <td style="width: 39.5833%; height: 18px;"><strong>Total</strong></td>
+          <td style="width: 6.51042%; height: 18px;"><strong><?= total?></strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <table style="border-collapse: collapse; width: 67.7557%; height: 72px;" border="1">
+      <tbody>
+        <tr style="height: 18px;">
+          <td style="width: 50%; height: 18px;"><span style="color: #ff0000;"><strong>Performer</strong></span></td>
+          <td style="width: 17.7557%; height: 18px;"><span style="color: #ff0000;"><strong>Category</strong></span></td>
+          <td style="width: 17.7557%; height: 18px;"><span style="color: #ff0000;"><strong>Date</strong></span></td>
+        </tr>
+        <? concerts.forEach(concert => { ?>
+          <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;"><?= concert.name?></td>
+            <td style="width: 50%; height: 18px;"><?= concert.category?></td>
+            <td style="width: 17.7557%; height: 18px;"><?= concert.date?></td>
+          </tr>
+        <? }) ?>
+      </tbody>
+    </table>
+  </body>
+</html>
